@@ -1,0 +1,10 @@
+.contenedorInicio{
+    width: 100vw;
+    height: 90vh;
+    background-color: rgb(39, 39, 39);
+    position: relative;
+    margin-top: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

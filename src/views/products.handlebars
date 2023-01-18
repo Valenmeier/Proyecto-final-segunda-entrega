@@ -1,0 +1,39 @@
+<div class="listaEstaticaContainer">
+    {{#if data}}
+    <div class="contenedorListas">
+        <h1 class="tituloLista">Lista de productos estaticos:</h1>
+
+        <div class="contenedorDeProductos">
+            {{#each data}}
+            <div class="card">
+                {{!-- <h3>{{this.title}}</h3> --}}
+                <div class="imagenCard">
+                    <img src="{{this.thumbnail}}" alt="{{this.title}}" srcset="">
+                </div>
+                <div class="tituloCard">
+                    <h3>{{this.title}}</h3>
+                </div>
+                <div class="cardHover">
+                    <div class="cardHoverTitle">
+                        <h3>{{this.title}}</h3>
+                    </div>
+                    <div class="cardHoverDescription">
+                        <h3>Descripción:</h3>
+                        <p> {{this.description}}</p>
+                    </div>
+                    <div class="cardHoverPrice">
+                         <div class="stockIdPrice">
+                            <h3>Price = ${{this.price}}</h3>
+                            <h3>Stock= {{this.stock}}</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+
+    </div>
+    {{else}}
+    <h4>No hay productos disponibles</h4>
+    {{/if}}
+</div>
