@@ -1,12 +1,12 @@
-<div class="listaEstaticaContainer">
+<div class="contenedorListaDinamica listaEstaticaContainer">
     {{#if data}}
     <div class="contenedorListas">
         <h1 class="tituloLista">Lista de productos estaticos:</h1>
 
         <div class="contenedorDeProductos">
             {{#each data}}
-            <div class="card">
-                {{!-- <h3>{{this.title}}</h3> --}}
+            <a href="products/{{this._id}}" class="card">
+                <h3>{{this.title}}</h3>
                 <div class="imagenCard">
                     <img src="{{this.thumbnail}}" alt="{{this.title}}" srcset="">
                 </div>
@@ -22,18 +22,29 @@
                         <p> {{this.description}}</p>
                     </div>
                     <div class="cardHoverPrice">
-                         <div class="stockIdPrice">
+                        <div class="stockIdPrice">
                             <h3>Price = ${{this.price}}</h3>
                             <h3>Stock= {{this.stock}}</h3>
                         </div>
                     </div>
                 </div>
-            </div>
+            </a>
             {{/each}}
+            <div class="botonesPagina">
+                {{#if prevLink}}
+                <a href="{{firstLink}}"><<</a>
+                <a href="{{prevLink}}" class="flechaPagina"><</a>
+                {{/if}}
+                <span href="">{{page}}</span>
+                {{#if nextLink}}
+                <a href="{{nextLink}}"flechaPagina>></a>
+                <a href="{{ultimateLink}}">>></a>
+                {{/if}}
+            </div>
         </div>
 
     </div>
     {{else}}
-    <h4>No hay productos disponibles</h4>
+    <h4>{{mensaje}}</h4>
     {{/if}}
 </div>

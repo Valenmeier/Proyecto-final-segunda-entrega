@@ -15,6 +15,12 @@ export let actualizarPagina = (totalPages, accion, url) => {
         if (accion == "anterior" && pagActual > 1) {
           pagActual = pagActual - 1;
         }
+        if (accion == "ultimate" && pagActual < totalPages) {
+          pagActual = totalPages;
+        }
+        if (accion == "first" && pagActual > 1) {
+          pagActual = 1;
+        }
         separarElement[1] = pagActual;
         return separarElement.join("=");
       }
@@ -43,6 +49,12 @@ export let actualizarPagina = (totalPages, accion, url) => {
         if (accion == "anterior" && pagActual > 1) {
           pagActual = pagActual - 1;
         }
+        if (accion == "ultimate" && pagActual < totalPages) {
+          pagActual = totalPages;
+        }
+        if (accion == "first" && pagActual > 1) {
+          pagActual = 1;
+        }
         separarElement[1] = pagActual;
         return separarElement.join("=");
       }
@@ -56,7 +68,7 @@ export let actualizarPagina = (totalPages, accion, url) => {
       return null;
     }
   } else {
-    let arregloUrl = urlActual + "?query=true&page=1";
+    let arregloUrl = urlActual + "?query=disponible&page=1";
     let separarUrl = arregloUrl.split("?");
 
     let primeraParte = separarUrl[0];
@@ -71,6 +83,12 @@ export let actualizarPagina = (totalPages, accion, url) => {
         if (accion == "anterior" && pagActual > 1) {
           pagActual = pagActual - 1;
         }
+        if (accion == "ultimate" && pagActual < totalPages) {
+          pagActual = totalPages;
+        }
+        if (accion == "first" && pagActual > 1) {
+          pagActual = 1;
+        }
         separarElement[1] = pagActual;
         return separarElement.join("=");
       }
@@ -78,6 +96,7 @@ export let actualizarPagina = (totalPages, accion, url) => {
     });
     segundaParte = cambiarPag.join("&");
     let nuevoUrl = primeraParte + "?" + segundaParte;
+    
     if (nuevoUrl !== arregloUrl) {
       return nuevoUrl;
     } else {

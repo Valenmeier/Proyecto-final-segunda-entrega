@@ -1,0 +1,15 @@
+{{#if traerProductos}}
+<div class="wrapperCarrito">
+    <div class="contenedorCarrito">
+        <h4>Articulos en carrito:</h4>
+        {{#each traerProductos}}
+            <div class="cardCarrito">
+            <div class="imagenCarrito">
+                <img src="{{this.thumbnail}}" alt="{{this.title}}">
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    <div class="footerCarrito"></div>
+</div>
+{{/if}}

@@ -50,8 +50,8 @@ io.on(`connection`, async (socket) => {
   console.log(`Nuevo cliente conectado`);
   socket.emit(`datos`, await productsModel.find());
   socket.emit("messages", await messagesModel.find());
-  socket.on("newMessage",async (data)=>{
-    await messagesModel.insertMany([data])
-    io.emit("messages", await messagesModel.find())
-  })
+  socket.on("newMessage", async (data) => {
+    await messagesModel.insertMany([data]);
+    io.emit("messages", await messagesModel.find());
+  });
 });

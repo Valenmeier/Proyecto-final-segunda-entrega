@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { productsModel } from "../dao/models/productsModel.js";
-import { actualizarPagina } from "./funcionActualizaLinks.js";
+import { actualizarPagina } from "../public/js/funcionActualizaLinks.js";
 import mongoose from "mongoose";
 
 // import productosEnEmpresa from "../dao/filesystem/manangers/productMananger.js";
