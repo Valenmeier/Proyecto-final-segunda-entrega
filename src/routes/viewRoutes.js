@@ -227,9 +227,13 @@ router.get(`/cart/:cid`, async (req, res) => {
   let traerProductos = [];
   for(let producto of carrito.products){
     let buscarProducto= await productsModel.findOne({_id:producto._id}).lean().exec()
-    traerProductos.push(buscarProducto)
+    let nuevoObjeto={
+      ...buscarProducto,
+      quantity:producto.quantity
+    }
+    traerProductos.push(nuevoObjeto)
   }
-  console.log(traerProductos)
+  
   res.render(`carrito`, {
     traerProductos,
     style: "carrito.css",
